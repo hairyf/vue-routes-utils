@@ -2,7 +2,7 @@
   "name": "vue-routes-utils",
   "type": "module",
   "version": "0.0.2",
-  "packageManager": "pnpm@8.1.1",
+  "packageManager": "pnpm@8.15.9",
   "description": "",
   "author": "Hairyf <wwu710632@gmail.com>",
   "license": "MIT",
