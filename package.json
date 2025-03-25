@@ -1,7 +1,7 @@
 {
   "name": "vue-routes-utils",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "packageManager": "pnpm@10.6.2",
   "description": "Regarding the utility function of routes in vue router",
   "author": "Hairyf <wwu710632@gmail.com>",
