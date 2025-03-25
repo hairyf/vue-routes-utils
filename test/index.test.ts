@@ -1,6 +1,6 @@
-import { cloneDeep } from 'lodash-es'
-import { describe, expect, it } from 'vitest'
 import type { RouteRecordRaw } from 'vue-router'
+import { cloneDeep } from '@hairy/utils'
+import { describe, expect, it } from 'vitest'
 import { routesWithMetaPaths } from '../src/with'
 
 describe('routesWithMetaPaths', () => {

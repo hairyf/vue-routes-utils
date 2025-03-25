@@ -16,10 +16,10 @@ declare module 'vue-router' {
  * deep helper routes meta info
  * @param routes
  */
-export function routesWithMetaPaths(routes: RouteRecordRaw[]) {
+export function routesWithMetaPaths(routes: RouteRecordRaw[]): void {
   let paths: string[] = []
 
-  const deepHandler = (routes: RouteRecordRaw[], upperPath?: string) => {
+  const deepHandler = (routes: RouteRecordRaw[], upperPath?: string): void => {
     typeof upperPath !== 'string' && (paths = [])
     for (const index in routes) {
       const route = routes[index]
@@ -42,7 +42,7 @@ export function routesWithMetaPaths(routes: RouteRecordRaw[]) {
   deepHandler(routes)
 }
 
-function _routesWithRedirects(routes: RouteRecordRaw[] = [], upperPath?: string) {
+function _routesWithRedirects(routes: RouteRecordRaw[] = [], upperPath?: string): void {
   for (const route of routes) {
     if (!(route.children && route.children.length > 0) || route.redirect)
       continue
@@ -74,7 +74,7 @@ function _routesWithRedirects(routes: RouteRecordRaw[] = [], upperPath?: string)
  * @if route.children && route.children.length > 0 && !route.redirect
  * @param routes
  */
-export function routesWithRedirects(routes: RouteRecordRaw[] = []) {
+export function routesWithRedirects(routes: RouteRecordRaw[] = []): void {
   _routesWithRedirects(routes)
 }
 
@@ -83,7 +83,7 @@ export function routesWithRedirects(routes: RouteRecordRaw[] = []) {
  *
  * If path: `/` is not set, add `{path: '/', redirect: routes[0].path}`
  */
-export function withDefaultRedirect(routes: RouteRecordRaw[] = []) {
+export function withDefaultRedirect(routes: RouteRecordRaw[] = []): void {
   if (routes.some(v => v.path === '/'))
     return
   routes.unshift({ path: '/', redirect: routes[0].path })

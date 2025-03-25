@@ -6,10 +6,8 @@ import type { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
  * You need to call handleMetaPaths in advance
  * @param current
  * @param target
- * @returns
  */
-export function someOf(current: RouteLocationNormalizedLoaded,
-  target: RouteRecordRaw | RouteLocationNormalizedLoaded) {
+export function someOf(current: RouteLocationNormalizedLoaded, target: RouteRecordRaw | RouteLocationNormalizedLoaded): boolean {
   const fullPath = target.meta?.fullPath || (target as any)?.fullPath
   return current.meta.paths?.includes(fullPath) || false
 }
@@ -20,7 +18,7 @@ export function someOf(current: RouteLocationNormalizedLoaded,
  * @param baseRoutes basic routes
  * @param surfaceRoutes compare routes
  */
-export function intersection(baseRoutes: RouteRecordRaw[] = [], surfaceRoutes: RouteRecordRaw[] = []) {
+export function intersection(baseRoutes: RouteRecordRaw[] = [], surfaceRoutes: RouteRecordRaw[] = []): RouteRecordRaw[] {
   const filterRoutes = baseRoutes.filter((base) => {
     const surface = surfaceRoutes.find(v => base.name === v.name)
     if (base.children && base.children?.length > 0)

@@ -1,0 +1,6 @@
+.:
+  intersection: function
+  routesWithMetaPaths: function
+  routesWithRedirects: function
+  someOf: function
+  withDefaultRedirect: function
